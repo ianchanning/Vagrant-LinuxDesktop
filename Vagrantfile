@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # either of the boxes provided, in favor of your own `vagrant box`).
   #
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu/trust"
+  config.vm.box = "ubuntu/trusty64"
   #
   # The URL from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system. Sources of other Vagrant
