@@ -23,11 +23,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # doesn't already exist on the user's system. Sources of other Vagrant
   # boxes are provided in this Project's README.
   #
-  # 32-bit Ubuntu 12.04 LTS
-  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box"
+  # 32-bit Ubuntu 14.04 LTS
+  # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box"
   #
-  # 64-bit Ubuntu 12.04 LTS
-  # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box"
+  # 64-bit Ubuntu 14.04 LTS
+  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
   config.vm.hostname = "ubuntu"
 
   # Forward Agent
@@ -69,16 +69,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # For a 64-bit VM (courtesy of https://gist.github.com/mikekunze/7486548#file-ubuntu-desktop-vagrantfile)
   # vb.customize ["modifyvm", :id, "--memory", "2048"]
     # Set the number of virtual CPUs for the virtual machine
-  # vb.customize ["modifyvm", :id, "--cpus", "2"]
-  # vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
-  # vb.customize ["modifyvm", :id, "--vram", "128"]
+  vb.customize ["modifyvm", :id, "--cpus", "2"]
+  vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+  vb.customize ["modifyvm", :id, "--vram", "128"]
     # Enabling the I/O APIC is required for 64-bit guest operating systems, especially Windows Vista;
     # it is also required if you want to use more than one virtual CPU in a VM.
-  # vb.customize ["modifyvm", :id, "--ioapic", "on"]
+  vb.customize ["modifyvm", :id, "--ioapic", "on"]
     # Enable the use of hardware virtualization extensions (Intel VT-x or AMD-V) in the processor of your host system
-  # vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
+  vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
     # Enable, if Guest Additions are installed, whether hardware 3D acceleration should be available
-  # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+  vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
   #
   # See Chapter 8. VBoxManage | VirtualBox Manual located @ virtualbox.org/manual/ch08.html
   # for more information on available options.
