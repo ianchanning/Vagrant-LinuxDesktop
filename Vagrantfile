@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # either of the boxes provided, in favor of your own `vagrant box`).
   #
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu"
+  config.vm.box = "ubuntu/trust"
   #
   # The URL from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system. Sources of other Vagrant
@@ -27,8 +27,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box"
   #
   # 64-bit Ubuntu 14.04 LTS
-  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
-  config.vm.hostname = "ubuntu"
+  # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.hostname = "trusty64"
 
   # Forward Agent
   #
@@ -67,7 +67,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port 0", "--device 0", "--type", "dvddrive"]
   #
   # For a 64-bit VM (courtesy of https://gist.github.com/mikekunze/7486548#file-ubuntu-desktop-vagrantfile)
-  # vb.customize ["modifyvm", :id, "--memory", "2048"]
+  vb.customize ["modifyvm", :id, "--memory", "2048"]
     # Set the number of virtual CPUs for the virtual machine
   vb.customize ["modifyvm", :id, "--cpus", "2"]
   vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
